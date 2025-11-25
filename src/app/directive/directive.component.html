@@ -1,0 +1,18 @@
+<p>directive works!</p>
+<button (click)="login= !login">{{login? 'Log Out' : 'Log In'}}</button>
+<ng-container *ngIf="login; else other">
+    Welcome {{user}} 
+ </ng-container>
+ <ng-template #other>
+    <p>Please login to continue </p>
+ </ng-template>
+ <button (click)="access=!access">
+  {{access? 'granted' : 'denied'}}
+ </button>
+ <ng-container *ngIf="access; then acessTmp ; else noacessTmp" ></ng-container>
+ <ng-template #acessTmp>
+    <p style="color:green">Permission Granted</p>
+ </ng-template>
+ <ng-template #noacessTmp>
+    <p style="color:red" >Permission Denied</p>
+ </ng-template>

@@ -1,0 +1,17 @@
+<div class="card">
+
+  <div class="input-row">
+    <input type="text" placeholder="type and enter to add item"
+    [value]="draft"
+    (input)="draft=$any($event.target).value"
+    (keyup.enter)="add()" />
+
+    <button (click)="add()">Add</button>
+    <button (click)="clear()" [disabled]="items.length === 0">Clear</button>
+  </div>
+
+  <ul>
+    <li *ngFor="let item of items; let i = index">{{i+1}} {{item}}</li>
+  </ul>
+
+</div>

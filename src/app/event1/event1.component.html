@@ -1,0 +1,8 @@
+<p>--------------------event1 works!--------------------</p>
+<button (click)="inc()" >Counter {{count}}</button>
+<p style="color:blue;">{{count}}</p>
+<input type="text" placeholder="type...." (input)="update($event)" (keyup)="lastkey=$any($event).value">
+<p>{{lastkey}}</p>
+<p>{{val}}</p>
+
+
