@@ -8,10 +8,11 @@ import { DirectiveComponent } from './directive/directive.component';
 import { directive2directive } from './directive2/directive2.component';
 import { Event1Component } from './event1/event1.component';
 import { Event2Component } from './event2/event2.component';
+import { ConditionalComponent } from './conditional/conditional.component';
 
 @Component({
   selector: 'app-root',
-  imports: [Event1Component,Event2Component,RouterOutlet, CardComponent,ScoreComponent,directive2directive, CommonModule, FormsModule,DirectiveComponent],
+  imports: [ConditionalComponent,Event1Component,Event2Component,RouterOutlet, CardComponent,ScoreComponent,directive2directive, CommonModule, FormsModule,DirectiveComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

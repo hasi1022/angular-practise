@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-conditional',
@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './conditional.component.css'
 })
 export class ConditionalComponent {
-
+  status=signal<'loading'|'success'|'error'>('loading')
 }
