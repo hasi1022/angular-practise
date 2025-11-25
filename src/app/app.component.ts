@@ -10,10 +10,11 @@ import { Event1Component } from './event1/event1.component';
 import { Event2Component } from './event2/event2.component';
 import { ConditionalComponent } from './conditional/conditional.component';
 import { ListComponent } from './list/list.component';
+import { List2Component } from './list2/list2.component';
 
 @Component({
   selector: 'app-root',
-  imports: [ListComponent,ConditionalComponent,Event1Component,Event2Component,RouterOutlet, CardComponent,ScoreComponent,directive2directive, CommonModule, FormsModule,DirectiveComponent],
+  imports: [List2Component,ListComponent,ConditionalComponent,Event1Component,Event2Component,RouterOutlet, CardComponent,ScoreComponent,directive2directive, CommonModule, FormsModule,DirectiveComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

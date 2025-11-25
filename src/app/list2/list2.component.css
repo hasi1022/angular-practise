@@ -1,0 +1,139 @@
+/* 🌟 Fun global container styling for kids */
+:host {
+  display: block;
+  font-family: "Baloo 2", "Comic Sans MS", cursive, sans-serif;
+  background: #ffffff;
+  padding: 20px;
+  color: #333;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* 🎉 Cute heading animation */
+h2 {
+  color: #ffb300;
+  font-size: 28px;
+  text-shadow: 2px 2px 0px #ffd966;
+  animation: pop 0.6s ease-in-out both;
+  margin-bottom: 15px;
+}
+
+/* 🧁 Input box - animated glow */
+input[type="search"] {
+  padding: 10px 14px;
+  width: 240px;
+  border: 3px solid #ffd54f;
+  border-radius: 10px;
+  outline: none;
+  font-size: 16px;
+  background: #fffde7;
+  transition: 0.4s;
+}
+
+input[type="search"]:focus {
+  border-color: #ffb300;
+  box-shadow: 0 0 12px #ffecb3;
+  transform: scale(1.05);
+}
+
+/* 🟡 Animated playful buttons */
+button {
+  padding: 10px 16px;
+  margin-right: 8px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+  background: #ffca28;
+  color: #3e2723;
+  transition: 0.3s;
+  animation: bounceIn 1s;
+}
+
+button:hover {
+  background: #ffb300;
+  transform: translateY(-4px) scale(1.05) rotate(-2deg);
+  box-shadow: 0 4px 10px rgba(255, 200, 0, 0.5);
+}
+
+/* 🍭 Styled animated table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 17px;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(255, 200, 0, 0.4);
+  animation: slideUp 0.7s ease-out;
+}
+
+/* 🐣 Table header */
+thead {
+  background: #fff59d;
+  animation: wiggle 3s infinite ease-in-out;
+}
+
+thead th {
+  padding: 14px;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: #5d4037;
+}
+
+/* 🐥 Table rows */
+tbody tr {
+  border-bottom: 2px solid #fff8c6;
+  transition: 0.3s;
+}
+
+tbody tr:hover {
+  background: #fff9c4;
+  transform: scale(1.02);
+}
+
+tbody td {
+  padding: 12px;
+  color: #4e342e;
+}
+
+/* 🧸 Animations */
+
+/* Fade page */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Pop heading */
+@keyframes pop {
+  0% { transform: scale(0.5); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Bounce buttons */
+@keyframes bounceIn {
+  0% { transform: scale(0.4); }
+  60% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+/* Slide table */
+@keyframes slideUp {
+  0% { transform: translateY(40px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Wiggly fun table header */
+@keyframes wiggle {
+  0%,100% { transform: rotate(0deg); }
+  50% { transform: rotate(1deg); }
+}
+
+
+/* 📱 Responsive */
+@media (max-width: 600px) {
+  input[type="search"] { width: 100%; margin-bottom: 10px; }
+  button { margin-top: 6px; width: 100%; }
+}
