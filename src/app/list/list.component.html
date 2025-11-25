@@ -1,0 +1,13 @@
+<p>list works!</p>
+<h2>List Practise - 1</h2>
+<div class="card">
+    <ul>
+        @for(item of items(); let i = $index; track item.id){
+            <li>{{item.name}} (id:{{item.id}})</li>
+        }
+    </ul>
+    <button (click)="rename()" >Rename First</button>
+    <button (click)="shuffle()" >shuffle</button>
+    <button (click)="add()" >add</button>
+
+</div>

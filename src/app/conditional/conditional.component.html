@@ -1,6 +1,6 @@
 <p>--------conditional works!--------</p>
 <h2>this is conditional practise </h2>
-<select (change)="status.set($any($event.target).value)" [value]=status >
+<select (change)="status.set($any($event.target).value)" [value]="status()" >
     <option value="success">Success</option>
     <option value="loading">Loading</option>
     <option value="error">Error</option>
