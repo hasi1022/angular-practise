@@ -5,8 +5,9 @@
     <option value="loading">Loading</option>
     <option value="error">Error</option>
 </select>
-@switch(status())
+@switch(status()){
 @case('success'){ <p style="color:blue" >this is success</p> }
 @case('loading'){ <p style="color:yellow" >Loading</p> }
 @case('error'){ <p style="color:red" >Error</p> }
 @default{ <p>this is default text</p> }
+}
