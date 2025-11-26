@@ -1,0 +1,18 @@
+<p>form works!</p>
+<h3>Form Practise - 1</h3>
+<div class="card">
+    <form #f="ngForm" (ngSubmit)="onsubmit()" novalidate>
+        Name : <input type="text" name="name" [(ngModel)]="model.name" required minlength=3 #name="ngModel"/>
+        <div *ngIf="name.invalid && (name.dirty || name.touched || submitted)">
+            <small *ngIf="name.errors && name.errors['required']">Name is required</small>
+            <small *ngIf="name.errors && name.errors['minlength'] " >minimum 3 length is neccasary</small>
+        </div>
+        Email : <input name="email"  [(ngModel)]="model.email" required email #email="ngModel" /> 
+        <div *ngIf="email.invalid && (email.dirty || email.touched || submitted)" >
+            <small *ngIf="email.errors && email.errors['required']">Email is required</small>
+            <small *ngIf="email.errors && email.errors['email']" > not valid formate </small>
+        </div>
+     <button type="submit"  [disabled]="f.invalid"> Submit </button>
+    </form> 
+
+</div>

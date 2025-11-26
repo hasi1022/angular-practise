@@ -12,10 +12,11 @@ import { ConditionalComponent } from './conditional/conditional.component';
 import { ListComponent } from './list/list.component';
 import { List2Component } from './list2/list2.component';
 import { List3Component } from './list3/list3.component';
+import { FormComponent } from './form/form.component';
 
 @Component({
   selector: 'app-root',
-  imports: [List3Component,List2Component,ListComponent,ConditionalComponent,Event1Component,Event2Component,RouterOutlet, CardComponent,ScoreComponent,directive2directive, CommonModule, FormsModule,DirectiveComponent],
+  imports: [FormComponent,List3Component,List2Component,ListComponent,ConditionalComponent,Event1Component,Event2Component,RouterOutlet, CardComponent,ScoreComponent,directive2directive, CommonModule, FormsModule,DirectiveComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
