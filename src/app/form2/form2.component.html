@@ -1,0 +1,33 @@
+<p>form2 works!</p>
+<h3>Form practise - 2</h3>
+<div class="card">
+    <form [formGroup]="form" (ngSubmit)="onsubmit()" >
+        <div class="form-field">
+       <label> Name :</label> 
+        <input formControlName="name" placeholder="enter your name "/> 
+        <div *ngIf="form.controls.name.errors && (form.controls.name.dirty || form.controls.name.touched || submitted)" >
+            <span *ngIf="form.controls.name.errors && form.controls.name.errors['required']" >name is required</span>
+            <span *ngIf="form.controls.name.errors && form.controls.name.errors['minlength']" >min 3 len</span>
+        </div>
+    </div>
+    <div class="form-field">
+       <label> Email : </label> 
+        <input formControlName="email" placeholder="enter your email" />
+        <div *ngIf="form.controls.email.errors && (form.controls.email.dirty || form.controls.email.touched || submitted)" >
+            <span *ngIf="form.controls.email.errors && form.controls.email.errors['required']" >Email is required</span>
+            <span *ngIf="form.controls.email.errors && form.controls.email.errors['email'] " >Not valid formate Email</span>
+        </div>
+    </div>
+    <div class="checkbox-continer">
+        <input type="checkbox" formControlName="newsletter"  />
+        <span>  Subscribe newsletter </span>
+    </div>
+        <button type="submit" [disabled]="form.invalid">Submit</button>
+    </form>
+
+</div>
+<div *ngIf="submitted" class="submitted-box">
+<p>Status : {{form.status}}</p>
+<p>{{form.value | json}}</p>
+<p *ngIf="submitted" >submitted</p>
+</div>

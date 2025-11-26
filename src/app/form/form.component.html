@@ -13,6 +13,9 @@
             <small *ngIf="email.errors && email.errors['email']" > not valid formate </small>
         </div>
      <button type="submit"  [disabled]="f.invalid"> Submit </button>
+     
     </form> 
-
+    <p *ngIf="submitted" >{{copy | json}}</p>
+   
 </div>
+ 
