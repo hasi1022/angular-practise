@@ -1,0 +1,24 @@
+<p>list3 works!</p>
+<h2>List Practise - 3 </h2>
+
+<div class="card">
+    <div class="subCard">
+<input #q type="text" placeholder="type here to serch"  (input)="query.set(q.value)" />
+<button (click)="setsort('name')" >sort by name</button>
+<button (click)="setsort('runs')" >sort by runs</button>
+<button (click)="setsort('matches')" >sort by matches</button>
+<button (click)="toogle()" >{{sorting_type() === 1? 'Aesc':'Desc'}}</button>
+    </div>
+    <div class="subCard">
+<table>
+    <thead>
+        <tr><th>Name</th><th>runs</th><th>matches</th><th>verage</th></tr>
+    </thead>
+    <tbody>
+        @for(it of view(); track it.name){
+        <tr><td>{{it.name}}</td><td>{{it.runs}}</td><td>{{it.matches}}</td><td>{{it.runs/it.matches}}</td></tr>
+        }
+    </tbody>
+</table>
+</div>
+</div>
