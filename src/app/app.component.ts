@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input,inject } from '@angular/core';
 //import { RouterOutlet } from '@angular/router';
 import { CardComponent } from './ng-content-test/ng-content-test.component';
 import { ScoreComponent } from './score/score.component';
@@ -17,8 +17,16 @@ import { Form2Component } from './form2/form2.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ProductComponent } from './product/product.component';
-import { provideRouter,RouterOutlet,RouterLink,withHashLocation,RouterLinkActive } from '@angular/router';
+import { provideRouter,RouterOutlet,RouterLink,withHashLocation,RouterLinkActive, ActivatedRoute, Router } from '@angular/router';
 import { bootstrapApplication } from '@angular/platform-browser';
+let login=false;
+
+export const authGaurd = () =>{
+  if(login) return true;
+  const router=inject(Router);
+  return router.createUrlTree(['/'])
+}
+
 @Component({
   selector: 'app-root',
   standalone:true,
@@ -39,13 +47,19 @@ export class AppComponent {
   toogle(){
     this.show= !this.show;
   }
+  login_return(){
+    return login;
+  }
+  toogleLogin(){
+   return login = !login;
+  }
 }
 
 // import { HomeComponent } from './home/home.component';
 // import { AboutComponent } from './about/about.component';
 const routes=[
   {path:'',component:HomeComponent},
-  {path:'about',component:AboutComponent},
+  {path:'about',component:AboutComponent,canActivate:[authGaurd]},
   {path:'product/:id',component:ProductComponent}
 ]
 bootstrapApplication(AppComponent,{
