@@ -7,6 +7,7 @@ import { authGaurd } from './app.component';
 export const routes: Routes = [ 
     {path: '',redirectTo:'home', pathMatch:'full', },
   {path:'home',component:HomeComponent},
-  {path:'about',component:AboutComponent,canActivate:[authGaurd]},
+  {path:'about',loadComponent:() => Promise.resolve(AboutComponent),canActivate:[authGaurd]},
   {path:'product/:id',component:ProductComponent}
 ]
+// here about is protected route and is lazy load we should always load lazy load 

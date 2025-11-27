@@ -1,12 +1,5 @@
 import { Component,Injectable } from '@angular/core';
-
-@Injectable({providedIn:'root'})
-export class counterServices{
-     value=0;
-     inc(){this.value++}
-     dec(){this.value--}
-     reset(){this.value=0}
-}
+import { counterServices } from '../services/counter.service';
 
 @Component({
   selector: 'app-injection',
