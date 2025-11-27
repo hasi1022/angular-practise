@@ -1,7 +1,14 @@
 
-
-    
-
+<h3>Router</h3>
+    <button (click)="toogleLogin()" >{{login_return()? 'Logout':'Login'}}</button>
+    <span>Status : {{login_return()? 'Logged in' : 'Not Logged in '}}</span>
+    <nav>
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Home</a>|
+      <a routerLink="/about" routerLinkActive="active">About</a>|
+      <a routerLink="/product/1">Product 1</a>|
+      <a routerLink="/product/2" >Product 2</a>
+    </nav>
+    <router-outlet></router-outlet>
  <h3>Content Projection (ng-content)</h3>
 
     <w3-card>
@@ -77,16 +84,8 @@
     <app-list3></app-list3>
     <app-form></app-form>
     <app-form2></app-form2>
-    <h3>Router</h3>
-    <button (click)="toogleLogin()" >{{login_return()? 'Logout':'Login'}}</button>
-    <span>Status : {{login_return()? 'Logged in' : 'Not Logged in '}}</span>
-    <nav>
-      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Home</a>|
-      <a routerLink="/about" routerLinkActive="active">About</a>|
-      <a routerLink="/product/1">Product 1</a>|
-      <a routerLink="/product/2" >Product 2</a>
-    </nav>
-    <router-outlet></router-outlet>
+    <app-injection></app-injection>
+    
     
    
 

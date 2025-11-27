@@ -17,20 +17,20 @@ import { Form2Component } from './form2/form2.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ProductComponent } from './product/product.component';
+import { InjectionComponent } from './injection/injection.component';
 import { provideRouter,RouterOutlet,RouterLink,withHashLocation,RouterLinkActive, ActivatedRoute, Router } from '@angular/router';
 import { bootstrapApplication } from '@angular/platform-browser';
-let login=false;
 
+let login=false;
 export const authGaurd = () =>{
   if(login) return true;
   const router=inject(Router);
   return router.createUrlTree(['/'])
 }
-
 @Component({
   selector: 'app-root',
   standalone:true,
-  imports: [RouterLinkActive,RouterLink,Form2Component,FormComponent,List3Component,List2Component,ListComponent,ConditionalComponent,Event1Component,Event2Component,RouterOutlet, CardComponent,ScoreComponent,directive2directive, CommonModule, FormsModule,DirectiveComponent],
+  imports: [InjectionComponent,RouterLinkActive,RouterLink,Form2Component,FormComponent,List3Component,List2Component,ListComponent,ConditionalComponent,Event1Component,Event2Component,RouterOutlet, CardComponent,ScoreComponent,directive2directive, CommonModule, FormsModule,DirectiveComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -57,11 +57,3 @@ export class AppComponent {
 
 // import { HomeComponent } from './home/home.component';
 // import { AboutComponent } from './about/about.component';
-const routes=[
-  {path:'',component:HomeComponent},
-  {path:'about',component:AboutComponent,canActivate:[authGaurd]},
-  {path:'product/:id',component:ProductComponent}
-]
-bootstrapApplication(AppComponent,{
-  providers:[provideRouter(routes,withHashLocation())]
-})
