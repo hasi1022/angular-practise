@@ -24,6 +24,8 @@ import { Injection4Component } from './injection4/injection4.component';
 import { Injection5Component } from './injection5/injection5.component';
 import { provideRouter,RouterOutlet,RouterLink,withHashLocation,RouterLinkActive, ActivatedRoute, Router } from '@angular/router';
 import { bootstrapApplication } from '@angular/platform-browser';
+import { HttpComponent } from './http/http.component';
+
 
 let login=false;
 export const authGaurd = () =>{
@@ -34,7 +36,7 @@ export const authGaurd = () =>{
 @Component({
   selector: 'app-root',
   standalone:true,
-  imports: [Injection4Component,Injection5Component,Injection2Component,Injection3Component,InjectionComponent,RouterLinkActive,RouterLink,Form2Component,FormComponent,List3Component,List2Component,ListComponent,ConditionalComponent,Event1Component,Event2Component,RouterOutlet, CardComponent,ScoreComponent,directive2directive, CommonModule, FormsModule,DirectiveComponent],
+  imports: [HttpComponent,Injection4Component,Injection5Component,Injection2Component,Injection3Component,InjectionComponent,RouterLinkActive,RouterLink,Form2Component,FormComponent,List3Component,List2Component,ListComponent,ConditionalComponent,Event1Component,Event2Component,RouterOutlet, CardComponent,ScoreComponent,directive2directive, CommonModule, FormsModule,DirectiveComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

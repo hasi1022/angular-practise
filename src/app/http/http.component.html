@@ -1,0 +1,9 @@
+<h2>http get request</h2>
+<button (click)="load()" >Load</button>
+<p *ngIf="loading" >Loading...</p>
+<p *ngIf="error" >{{error}}</p>
+<ul>
+    @for(i of users; track  i.name){
+    <li>{{i.name}} -> {{i.email}}</li>
+    }
+</ul>
