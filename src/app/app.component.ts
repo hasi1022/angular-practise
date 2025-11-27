@@ -16,12 +16,13 @@ import { FormComponent } from './form/form.component';
 import { Form2Component } from './form2/form2.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
-import { provideRouter,RouterOutlet,RouterLink,withHashLocation } from '@angular/router';
+import { ProductComponent } from './product/product.component';
+import { provideRouter,RouterOutlet,RouterLink,withHashLocation,RouterLinkActive } from '@angular/router';
 import { bootstrapApplication } from '@angular/platform-browser';
 @Component({
   selector: 'app-root',
   standalone:true,
-  imports: [RouterLink,Form2Component,FormComponent,List3Component,List2Component,ListComponent,ConditionalComponent,Event1Component,Event2Component,RouterOutlet, CardComponent,ScoreComponent,directive2directive, CommonModule, FormsModule,DirectiveComponent],
+  imports: [RouterLinkActive,RouterLink,Form2Component,FormComponent,List3Component,List2Component,ListComponent,ConditionalComponent,Event1Component,Event2Component,RouterOutlet, CardComponent,ScoreComponent,directive2directive, CommonModule, FormsModule,DirectiveComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -44,7 +45,8 @@ export class AppComponent {
 // import { AboutComponent } from './about/about.component';
 const routes=[
   {path:'',component:HomeComponent},
-  {path:'about',component:AboutComponent}
+  {path:'about',component:AboutComponent},
+  {path:'product/:id',component:ProductComponent}
 ]
 bootstrapApplication(AppComponent,{
   providers:[provideRouter(routes,withHashLocation())]
