@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+//import { RouterOutlet } from '@angular/router';
 import { CardComponent } from './ng-content-test/ng-content-test.component';
 import { ScoreComponent } from './score/score.component';
 import { CommonModule } from '@angular/common';
@@ -14,9 +14,14 @@ import { List2Component } from './list2/list2.component';
 import { List3Component } from './list3/list3.component';
 import { FormComponent } from './form/form.component';
 import { Form2Component } from './form2/form2.component';
+import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
+import { provideRouter,RouterOutlet,RouterLink,withHashLocation } from '@angular/router';
+import { bootstrapApplication } from '@angular/platform-browser';
 @Component({
   selector: 'app-root',
-  imports: [Form2Component,FormComponent,List3Component,List2Component,ListComponent,ConditionalComponent,Event1Component,Event2Component,RouterOutlet, CardComponent,ScoreComponent,directive2directive, CommonModule, FormsModule,DirectiveComponent],
+  standalone:true,
+  imports: [RouterLink,Form2Component,FormComponent,List3Component,List2Component,ListComponent,ConditionalComponent,Event1Component,Event2Component,RouterOutlet, CardComponent,ScoreComponent,directive2directive, CommonModule, FormsModule,DirectiveComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -34,3 +39,13 @@ export class AppComponent {
     this.show= !this.show;
   }
 }
+
+// import { HomeComponent } from './home/home.component';
+// import { AboutComponent } from './about/about.component';
+const routes=[
+  {path:'',component:HomeComponent},
+  {path:'about',component:AboutComponent}
+]
+bootstrapApplication(AppComponent,{
+  providers:[provideRouter(routes,withHashLocation())]
+})
