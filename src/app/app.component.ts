@@ -26,6 +26,7 @@ import { provideRouter,RouterOutlet,RouterLink,withHashLocation,RouterLinkActive
 import { bootstrapApplication } from '@angular/platform-browser';
 import { HttpComponent } from './http/http.component';
 import { Http2Component } from './http2/http2.component';
+import { PipeComponent } from './pipe/pipe.component';
 
 
 let login=false;
@@ -37,7 +38,7 @@ export const authGaurd = () =>{
 @Component({
   selector: 'app-root',
   standalone:true,
-  imports: [Http2Component,HttpComponent,Injection4Component,Injection5Component,Injection2Component,Injection3Component,InjectionComponent,RouterLinkActive,RouterLink,Form2Component,FormComponent,List3Component,List2Component,ListComponent,ConditionalComponent,Event1Component,Event2Component,RouterOutlet, CardComponent,ScoreComponent,directive2directive, CommonModule, FormsModule,DirectiveComponent],
+  imports: [PipeComponent,Http2Component,HttpComponent,Injection4Component,Injection5Component,Injection2Component,Injection3Component,InjectionComponent,RouterLinkActive,RouterLink,Form2Component,FormComponent,List3Component,List2Component,ListComponent,ConditionalComponent,Event1Component,Event2Component,RouterOutlet, CardComponent,ScoreComponent,directive2directive, CommonModule, FormsModule,DirectiveComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

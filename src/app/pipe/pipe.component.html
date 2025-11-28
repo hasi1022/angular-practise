@@ -1,0 +1,16 @@
+<h3>Customized Pipe</h3>
+@if(!text){
+    <p>empty message</p>
+}
+<p>Message : {{text|camelcase}}</p>
+<p  >Time : {{time$|async|date:'mediumTime'}}</p>
+<h4>Users</h4>
+<ng-container>
+    @if(users$ | async; as user){
+        <ul>
+            @for(u of user; track u.name){
+            <li>{{u.name}}</li>
+            }
+        </ul>
+    }
+</ng-container>
