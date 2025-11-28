@@ -1,9 +1,11 @@
 <h2>http get request</h2>
 <button (click)="load()" >Load</button>
 <p *ngIf="loading" >Loading...</p>
-<p *ngIf="error" >{{error}}</p>
+<p *ngIf="error" >{{error|json}}</p>
 <ul>
-    
+    @if(!users){
+        <p>{{error|json}}</p>
+    }
     <li>{{users|json}}</li>
     
 </ul>
