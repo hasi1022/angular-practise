@@ -1,0 +1,14 @@
+<p>lifecyclehook2 works!</p>
+<button (click)="toogleUser()">
+Toogle
+</button>
+
+<button (click)="showMessage()" >
+Message
+</button>
+
+<p>Current Message : {{message}}</p>
+
+@if(showchild){
+    <app-lifecyclehook [message]="'hello'" ></app-lifecyclehook>
+}
