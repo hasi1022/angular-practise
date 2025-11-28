@@ -1,0 +1,8 @@
+<h2>HTTP POST</h2>
+<button (click)="create()" >Create</button>
+<p *ngIf="loading" >Loding...</p>
+<p *ngIf="error" >{{error}}</p>
+<div *ngIf="result" >
+<p>{{result.name}}</p>
+<p>POST request succesfull</p>
+</div>

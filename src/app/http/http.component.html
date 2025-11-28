@@ -3,7 +3,7 @@
 <p *ngIf="loading" >Loading...</p>
 <p *ngIf="error" >{{error}}</p>
 <ul>
-    @for(i of users; track  i.name){
-    <li>{{i.name}} -> {{i.email}}</li>
-    }
+    
+    <li>{{users|json}}</li>
+    
 </ul>

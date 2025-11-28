@@ -16,7 +16,7 @@ export class HttpComponent {
    load(){
     this.loading=true;
     this.error='';
-    this.http.get<any[]>('https://jsonplaceholder.typicode.com/users')
+    this.http.get<any[]>('http://localhost:8000/api/view_company/2')
     .subscribe({
       next:(data)=>{this.users=data; this.loading=false},
       error:()=>{this.error='failed to load data'; this.loading=false}
